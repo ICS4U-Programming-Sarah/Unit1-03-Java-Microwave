@@ -1,14 +1,14 @@
 import java.util.Scanner;
 
 /**
-* This program receives the mass from the user.
-* From information given, it calculates how much energy,
-* a specific mass would produce.
+* This program receives item and max item from user
+* From information given, it calculates how much time,
+* would a specific item would produce.
 *
 * @author  Sarah Andrew
 * @version 1.0
 *
-* @since   2023-02-16
+* @since   2023-02-22
 */
 
 public final class Microwave {
@@ -32,9 +32,9 @@ public final class Microwave {
 
     public static void main(String[] args) {
         // declare variables
-        final String op_1 = "pizza";
-        final String op_2 = "sub";
-        final String food3 = "soup";
+        final String opOne = "pizza";
+        final String opTwo = "sub";
+        final String opThree = "soup";
         final float TIME_AVE_SUB = 60;
         final float TIME_AVE_PIZ = 45;
         final float TIME_AVE_SOUP = 105;
@@ -48,12 +48,19 @@ public final class Microwave {
         System.out.println("Are you heating sub, pizza, or soup? ");
         final String userFood = scanner.nextLine();
 
-        if (userFood.equals(op_1)) {
-            System.out.println("How many items would you like to heat (max 3): ");
+        // If statement checking to see what user enters, comparing
+        // the strings together.
+        if (userFood.equals(opOne)) {
+            System.out.print("How many pizza(s) would you like to heat up");
+            System.out.println("max 3): ");
             final String amountStr = scanner.nextLine();
 
+            // Usage of try catch to detect errors
             try {
                 final Integer amountInt = Integer.parseInt(amountStr);
+
+                // If statement executing if user enters a specific amount
+                // do said calculations.
                 if (amountInt == 1) {
                     time = TIME_AVE_PIZ;
                     System.out.println("The total cook time is: " + time);
@@ -63,7 +70,11 @@ public final class Microwave {
                 } else if (amountInt == 3) {
                     time = TIME_AVE_PIZ + TIME_AVE_PIZ;
                     System.out.println("The total cook time is: " + time);
+                } else if (amountInt == 0) {
+                    time = 0;
+                    System.out.println("The total cook time is: " + time);
                 } else {
+                    // User enters invalid input, display to them.
                     System.out.println("Please enter a valid input");
                 }
             } catch (NumberFormatException error) {
@@ -71,13 +82,19 @@ public final class Microwave {
                 System.out.print("Please enter valid input."
                         + error.getMessage());
             }
-        }
-        if (userFood.equals(op_2)) {
-            System.out.println("How many items would you like to heat (max 3): ");
+        // Statement checking to see what user enters, comparing
+        // the strings together.
+        } else if (userFood.equals(opTwo)) {
+            System.out.print("How sub(s) would you like to heat up ");
+            System.out.println("(max 3): ");
             final String amountStr = scanner.nextLine();
 
+            // Usage of try catch to detect the errors.
             try {
                 final Integer amountInt = Integer.parseInt(amountStr);
+
+                // If statement executing if user enters a specific amount
+                // do said calculations.
                 if (amountInt == 1) {
                     time = TIME_AVE_SUB;
                     System.out.println("The total cook time is: " + time);
@@ -87,7 +104,11 @@ public final class Microwave {
                 } else if (amountInt == 3) {
                     time = TIME_AVE_SUB + TIME_AVE_SUB;
                     System.out.println("The total cook time is: " + time);
+                } else if (amountInt == 0) {
+                    time = 0;
+                    System.out.println("The total cook time is: " + time);
                 } else {
+                    // User enters invalid input, display to them.
                     System.out.println("Please enter a valid input");
                 }
             } catch (NumberFormatException error) {
@@ -95,7 +116,43 @@ public final class Microwave {
                 System.out.print("Please enter valid input."
                         + error.getMessage());
             }
+        // Statement checking to see what user enters, comparing
+        // the strings together.
+        } else if (userFood.equals(opThree)) {
+            System.out.print("How many items would you like to");
+            System.out.println("heat up: (max 3): ");
+            final String amountStr = scanner.nextLine();
 
+            // Usage of try catch to detect the errors.
+            try {
+                final Integer amountInt = Integer.parseInt(amountStr);
+
+                // If statement executing if user enters a specific amount
+                // do said calculations.
+                if (amountInt == 1) {
+                    time = TIME_AVE_SOUP;
+                    System.out.println("The total cook time is: " + time);
+                } else if (amountInt == 2) {
+                    time = (TIME_AVE_SOUP * HALF_TIME) + TIME_AVE_SOUP;
+                    System.out.println("The total cook time is: " + time);
+                } else if (amountInt == 3) {
+                    time = TIME_AVE_SOUP + TIME_AVE_SOUP;
+                    System.out.println("The total cook time is: " + time);
+                } else if (amountInt == 0) {
+                    time = 0;
+                    System.out.println("The total cook time is: " + time);
+                } else {
+                    // User enters invalid input, display to them.
+                    System.out.println("Please enter a valid input");
+                }
+            } catch (NumberFormatException error) {
+                // Displays error to user.
+                System.out.print("Please enter valid input."
+                        + error.getMessage());
+            }
+        // Display to user when enter an option that's not specified.
+        } else {
+            System.out.println("Please enter specified options above.");
         }
         scanner.close();
     }
