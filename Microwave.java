@@ -3,7 +3,7 @@ import java.util.Scanner;
 /**
 * This program receives item and max item from user
 * From information given, it calculates how much time,
-* would a specific item would produce.
+* would a specific item take to heat up.
 *
 * @author  Sarah Andrew
 * @version 1.0
@@ -63,19 +63,23 @@ public final class Microwave {
                 // do said calculations.
                 if (amountInt == 1) {
                     time = TIME_AVE_PIZ;
-                    System.out.println("The total cook time is: " + time);
+                    System.out.println("The total cook time is: " + time
+                        + " seconds.");
                 } else if (amountInt == 2) {
                     time = (TIME_AVE_PIZ * HALF_TIME) + TIME_AVE_PIZ;
-                    System.out.println("The total cook time is: " + time);
+                    System.out.println("The total cook time is: "
+                        + time + " seconds");
                 } else if (amountInt == 3) {
                     time = TIME_AVE_PIZ + TIME_AVE_PIZ;
-                    System.out.println("The total cook time is: " + time);
+                    System.out.println("The total cook time is: " + time
+                        + " seconds.");
                 } else if (amountInt == 0) {
                     time = 0;
-                    System.out.println("The total cook time is: " + time);
+                    System.out.println("The total cook time is: " + time
+                        + " seconds.");
                 } else {
                     // User enters invalid input, display to them.
-                    System.out.println("Please enter a valid input");
+                    System.out.println("Please enter specified limit.");
                 }
             } catch (NumberFormatException error) {
                 // Displays error to user.
@@ -97,19 +101,23 @@ public final class Microwave {
                 // do said calculations.
                 if (amountInt == 1) {
                     time = TIME_AVE_SUB;
-                    System.out.println("The total cook time is: " + time);
+                    System.out.println("The total cook time is: " + time
+                        + " seconds.");
                 } else if (amountInt == 2) {
                     time = (TIME_AVE_SUB * HALF_TIME) + TIME_AVE_SUB;
-                    System.out.println("The total cook time is: " + time);
+                    System.out.println("The total cook time is: " + time
+                        + " seconds.");
                 } else if (amountInt == 3) {
                     time = TIME_AVE_SUB + TIME_AVE_SUB;
-                    System.out.println("The total cook time is: " + time);
+                    System.out.println("The total cook time is: " + time
+                        + " seconds.");
                 } else if (amountInt == 0) {
                     time = 0;
-                    System.out.println("The total cook time is: " + time);
+                    System.out.println("The total cook time is: " + time
+                        + " seconds.");
                 } else {
                     // User enters invalid input, display to them.
-                    System.out.println("Please enter a valid input");
+                    System.out.println("Please enter specified limit.");
                 }
             } catch (NumberFormatException error) {
                 // Displays error to user.
@@ -131,19 +139,23 @@ public final class Microwave {
                 // do said calculations.
                 if (amountInt == 1) {
                     time = TIME_AVE_SOUP;
-                    System.out.println("The total cook time is: " + time);
+                    System.out.println("The total cook time is: " + time
+                        + " seconds.");
                 } else if (amountInt == 2) {
                     time = (TIME_AVE_SOUP * HALF_TIME) + TIME_AVE_SOUP;
-                    System.out.println("The total cook time is: " + time);
+                    System.out.println("The total cook time is: " + time
+                        + " seconds.");
                 } else if (amountInt == 3) {
                     time = TIME_AVE_SOUP + TIME_AVE_SOUP;
-                    System.out.println("The total cook time is: " + time);
+                    System.out.println("The total cook time is: " + time
+                        + " seconds.");
                 } else if (amountInt == 0) {
                     time = 0;
-                    System.out.println("The total cook time is: " + time);
+                    System.out.println("The total cook time is: " + time
+                        + " seconds.");
                 } else {
                     // User enters invalid input, display to them.
-                    System.out.println("Please enter a valid input");
+                    System.out.println("Please enter specified limit.");
                 }
             } catch (NumberFormatException error) {
                 // Displays error to user.
