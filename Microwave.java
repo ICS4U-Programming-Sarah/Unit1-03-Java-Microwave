@@ -39,25 +39,32 @@ public final class Microwave {
         final float TIME_AVE_PIZ = 45;
         final float TIME_AVE_SOUP = 105;
         final float HALF_TIME = 1f / 2f;
-        final float time;
+        final String ERROR_MESSAGE = "Please enter specified limit.";
+
+        // Initialize variables
+        float time = 0;
+        String userFood = " ";
+        String amountStr = "";
+        int amountInt = 0;
+
 
         // Create a new scanner
         final Scanner scanner = new Scanner(System.in);
 
         // Gets user input
         System.out.println("Are you heating sub, pizza, or soup? ");
-        final String userFood = scanner.nextLine();
+        userFood = scanner.nextLine();
 
         // If statement checking to see what user enters, comparing
         // the strings together.
         if (userFood.equals(opOne)) {
-            System.out.print("How many pizza(s) would you like to heat up");
-            System.out.println("max 3): ");
-            final String amountStr = scanner.nextLine();
+            System.out.print("How many pizza(s) would you like to heat up ");
+            System.out.println( "(max 3): ");
+            amountStr = scanner.nextLine();
 
             // Usage of try catch to detect errors
             try {
-                final Integer amountInt = Integer.parseInt(amountStr);
+                amountInt = Integer.parseInt(amountStr);
 
                 // If statement executing if user enters a specific amount
                 // do said calculations.
@@ -68,7 +75,7 @@ public final class Microwave {
                 } else if (amountInt == 2) {
                     time = (TIME_AVE_PIZ * HALF_TIME) + TIME_AVE_PIZ;
                     System.out.println("The total cook time is: "
-                        + time + " seconds");
+                        + time + " seconds.");
                 } else if (amountInt == 3) {
                     time = TIME_AVE_PIZ + TIME_AVE_PIZ;
                     System.out.println("The total cook time is: " + time
@@ -79,23 +86,22 @@ public final class Microwave {
                         + " seconds.");
                 } else {
                     // User enters invalid input, display to them.
-                    System.out.println("Please enter specified limit.");
+                    System.out.println(ERROR_MESSAGE);
                 }
             } catch (NumberFormatException error) {
                 // Displays error to user.
-                System.out.print("Please enter valid input."
-                        + error.getMessage());
+                System.out.print(ERROR_MESSAGE + error.getMessage());
             }
         // Statement checking to see what user enters, comparing
         // the strings together.
         } else if (userFood.equals(opTwo)) {
             System.out.print("How sub(s) would you like to heat up ");
             System.out.println("(max 3): ");
-            final String amountStr = scanner.nextLine();
+            amountStr = scanner.nextLine();
 
             // Usage of try catch to detect the errors.
             try {
-                final Integer amountInt = Integer.parseInt(amountStr);
+                amountInt = Integer.parseInt(amountStr);
 
                 // If statement executing if user enters a specific amount
                 // do said calculations.
@@ -117,23 +123,22 @@ public final class Microwave {
                         + " seconds.");
                 } else {
                     // User enters invalid input, display to them.
-                    System.out.println("Please enter specified limit.");
+                    System.out.println(ERROR_MESSAGE);
                 }
             } catch (NumberFormatException error) {
                 // Displays error to user.
-                System.out.print("Please enter valid input."
-                        + error.getMessage());
+                System.out.print(ERROR_MESSAGE + error.getMessage());
             }
         // Statement checking to see what user enters, comparing
         // the strings together.
         } else if (userFood.equals(opThree)) {
             System.out.print("How many items would you like to");
             System.out.println("heat up: (max 3): ");
-            final String amountStr = scanner.nextLine();
+            amountStr = scanner.nextLine();
 
             // Usage of try catch to detect the errors.
             try {
-                final Integer amountInt = Integer.parseInt(amountStr);
+                amountInt = Integer.parseInt(amountStr);
 
                 // If statement executing if user enters a specific amount
                 // do said calculations.
@@ -155,12 +160,11 @@ public final class Microwave {
                         + " seconds.");
                 } else {
                     // User enters invalid input, display to them.
-                    System.out.println("Please enter specified limit.");
+                    System.out.println(ERROR_MESSAGE);
                 }
             } catch (NumberFormatException error) {
                 // Displays error to user.
-                System.out.print("Please enter valid input."
-                        + error.getMessage());
+                System.out.print(ERROR_MESSAGE + error.getMessage());
             }
         // Display to user when enter an option that's not specified.
         } else {
